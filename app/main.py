@@ -9,6 +9,8 @@ from jwt.exceptions import InvalidTokenError
 import os
 from dotenv import load_dotenv
 
+from app.routers import health_check
+
 load_dotenv()
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
@@ -33,6 +35,8 @@ fake_users_db = {
 }
 
 app = FastAPI()
+
+app.include_router(health_check.router)
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
@@ -128,11 +132,6 @@ async def get_current_active_user(
 @app.get("/items/")
 async def root(token: Annotated[str, Depends(oauth2_scheme)]):
     return {"token": token}
-
-
-@app.get("/health", dependencies=[Depends(oauth2_scheme)])
-def health():
-    return {"status": "ok"}
 
 
 @app.get("/users/me")
