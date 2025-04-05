@@ -4,13 +4,9 @@ from sqlmodel import select
 from app.schemas.user import UserSchema
 from datetime import timedelta, datetime
 import jwt
-import os
+from app.settings.base import SECRET_KEY, ALGORITHM
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-
-SECRET_KEY = os.environ.get("SECRET_KEY")
-ALGORITHM = os.environ.get("ALGORITHM")
 
 
 def verify_password(password: str, hashed_password: str) -> bool:
@@ -21,11 +17,11 @@ def hash_password(password: str) -> str:
     return pwd_context.hash(password)
 
 
-def authenticate_user(username: str, password: str, session: SessionDep) -> bool:
+def authenticate_user(username: str, password: str, session: SessionDep) -> UserSchema:
     user = session.exec(select(UserSchema).where(UserSchema.username == username)).one()
     if not user or not verify_password(password, user.password):
-        return False
-    return True
+        return None
+    return user
 
 
 def create_access_token(data: dict, expires_delta: timedelta):

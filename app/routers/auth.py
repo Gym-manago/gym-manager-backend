@@ -9,15 +9,12 @@ from fastapi.security import OAuth2PasswordRequestForm
 from app.dependencies import SessionDep
 from app.schemas.user import UserSchema
 from app.utils.login import hash_password, authenticate_user, create_access_token
-import os
 from datetime import timedelta
+from app.settings.base import ACCESS_TOKEN_EXPIRE_MINUTES
 
-from app.models.login import UserModelWithPassword, UserModelResponse, TokenResponse
+from app.models.login import UserModelWithPassword, UserModelResponse, LoginResponse
 
 router = APIRouter(tags=["Auth"], prefix="/auth")
-
-
-ACCESS_TOKEN_EXPIRE_MINUTES = int(os.environ.get("ACCESS_TOKEN_EXPIRE_MINUTES"))
 
 
 @router.post("/login")
@@ -31,10 +28,15 @@ async def login(
         )
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
-        data={"sub": form_data.username}, expires_delta=access_token_expires
+        data={"sub": user.username}, expires_delta=access_token_expires
     )
 
-    return TokenResponse(access_token=access_token, token_type="bearer")
+    return LoginResponse(
+        access_token=access_token,
+        token_type="bearer",
+        username=user.username,
+        email=user.email,
+    )
 
 
 @router.post("/sign-up", response_model=UserModelResponse)

@@ -11,7 +11,8 @@ class UserModelBase(BaseModel):
     username: str = Field()
     email: str
 
-
+class LoginResponse(UserModelBase,TokenResponse):
+    pass
 class UserModelWithPassword(UserModelBase):
     password: str
 

@@ -1,6 +1,5 @@
 from typing import Annotated
 from fastapi import FastAPI, Depends
-import os
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -9,10 +8,6 @@ from app.database import lifespan
 from app.dependencies import oauth2_scheme
 
 load_dotenv()
-
-SECRET_KEY = os.environ.get("SECRET_KEY")
-ALGORITHM = os.environ.get("ALGORITHM")
-ACCESS_TOKEN_EXPIRE_MINUTES = int(os.environ.get("ACCESS_TOKEN_EXPIRE_MINUTES"))
 
 
 app = FastAPI(lifespan=lifespan)
