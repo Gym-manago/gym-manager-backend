@@ -95,7 +95,7 @@ celerybeat.pid
 .env
 .venv
 env/
-venv/
+.venv/
 ENV/
 env.bak/
 venv.bak/
@@ -122,4 +122,5 @@ dmypy.json
 *.db
 *.sqlite3
 
-venv/
+.venv/
+.idea/
