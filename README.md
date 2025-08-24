@@ -20,8 +20,8 @@ This is the backend for the Gym Manager application, built using FastAPI.
 2. Create and activate a virtual environment:
 
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    python -m .venv .venv
+    source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
     ```
 
 3. Install the dependencies:
