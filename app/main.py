@@ -3,7 +3,7 @@ from fastapi import FastAPI, Depends
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import health_check, auth
+from app.routers import health_check, auth, member
 from app.database import lifespan
 from app.dependencies import oauth2_scheme
 
@@ -14,7 +14,8 @@ app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://gym-manager-chirawa-dev.vercel.app"],
+    allow_origins=["https://gym-manager-chirawa-dev.vercel.app",
+                   "http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["GET", "OPTIONS"],
     allow_headers=["*"],
@@ -22,6 +23,7 @@ app.add_middleware(
 
 app.include_router(health_check.router)
 app.include_router(auth.router)
+app.include_router(member.router)
 
 
 @app.get("/token/")
