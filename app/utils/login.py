@@ -17,8 +17,9 @@ def hash_password(password: str) -> str:
     return pwd_context.hash(password)
 
 
-def authenticate_user(username: str, password: str, session: SessionDep) -> UserSchema:
-    user = session.exec(select(UserSchema).where(UserSchema.username == username)).one()
+def authenticate_user(username: str, password: str, session: SessionDep) -> UserSchema | None:
+    user = session.exec(select(UserSchema).where(
+        UserSchema.username == username)).one()
     if not user or not verify_password(password, user.password):
         return None
     return user

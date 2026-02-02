@@ -7,12 +7,11 @@ from fastapi import APIRouter, Depends, status
 from fastapi.exceptions import HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
 from app.dependencies import SessionDep
-from app.schemas.user import UserSchema
+from app.schemas.user import UserSchema, UserModelResponse, LoginResponse
 from app.utils.login import hash_password, authenticate_user, create_access_token
 from datetime import timedelta
 from app.settings.base import ACCESS_TOKEN_EXPIRE_MINUTES
 
-from app.models.login import UserModelWithPassword, UserModelResponse, LoginResponse
 
 router = APIRouter(tags=["Auth"], prefix="/auth")
 
@@ -40,7 +39,7 @@ async def login(
 
 
 @router.post("/sign-up", response_model=UserModelResponse)
-def signup(payload: UserModelWithPassword, session: SessionDep):
+def signup(payload: UserSchema, session: SessionDep):
     hashed_password = hash_password(password=payload.password)
     user = UserSchema(
         username=payload.username, email=payload.email, password=hashed_password
