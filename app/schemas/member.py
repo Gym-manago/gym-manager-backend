@@ -1,4 +1,4 @@
-from sqlmodel import SQLModel, Field, Enum as SQLEnum, Column
+from sqlmodel import SQLModel, Field, Enum as SQLEnum, Column, String
 from enum import Enum
 from uuid import UUID, uuid4
 
@@ -32,7 +32,8 @@ class MemberAddressSchema(MemberAddressPayload, table=True):
 class MemberPayload(SQLModel):
     first_name: str
     last_name: str
-    email: str = Field(index=True)
+    email: str = Field(sa_column=Column(
+        "email", String, unique=True, index=True))
     phone_number: str | None = None
     membership_start_date: str
     membership_end_date: str
@@ -42,6 +43,7 @@ class MemberPayload(SQLModel):
                            sa_column=Column(SQLEnum(Gender)))
     membership_type: MembershipType = Field(default=MembershipType.GYM,
                                             sa_column=Column(SQLEnum(MembershipType)))
+    payment_method: str | None = None
 
 
 class MemberDataPayload(SQLModel):

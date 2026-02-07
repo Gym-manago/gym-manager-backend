@@ -1,0 +1,222 @@
+[
+  {
+    "member": {
+      "first_name": "Rahul",
+      "last_name": "Sharma",
+      "email": "rahul.sharma@example.com",
+      "phone_number": "+91-9876543210",
+      "membership_start_date": "2023-01-15",
+      "membership_end_date": "2024-01-14",
+      "active": true,
+      "date_of_birth": "1990-05-20",
+      "gender": "Male",
+      "membership_type": "Gym"
+    },
+    "address": {
+      "street_line_1": "123, Gandhi Nagar",
+      "street_line_2": "Near Central Park",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pin_code": "400001",
+      "country": "India"
+    }
+  },
+  {
+    "member": {
+      "first_name": "Priya",
+      "last_name": "Singh",
+      "email": "priya.singh@example.com",
+      "phone_number": "+91-9876543211",
+      "membership_start_date": "2023-02-01",
+      "membership_end_date": "2024-01-31",
+      "active": true,
+      "date_of_birth": "1992-08-10",
+      "gender": "Female",
+      "membership_type": "Gym"
+    },
+    "address": {
+      "street_line_1": "Flat 4B, Royal Apartments",
+      "street_line_2": "Sector 18",
+      "city": "Delhi",
+      "state": "Delhi",
+      "pin_code": "110001",
+      "country": "India"
+    }
+  },
+  {
+    "member": {
+      "first_name": "Amit",
+      "last_name": "Patel",
+      "email": "amit.patel@example.com",
+      "phone_number": "+91-9876543212",
+      "membership_start_date": "2022-11-01",
+      "membership_end_date": "2023-10-31",
+      "active": false,
+      "date_of_birth": "1988-03-15",
+      "gender": "Male",
+      "membership_type": "Gym"
+    },
+    "address": {
+      "street_line_1": "Shop No. 5, Market Lane",
+      "street_line_2": "Shivaji Nagar",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pin_code": "560001",
+      "country": "India"
+    }
+  },
+  {
+    "member": {
+      "first_name": "Neha",
+      "last_name": "Kumar",
+      "email": "neha.kumar@example.com",
+      "phone_number": "+91-9876543213",
+      "membership_start_date": "2023-03-10",
+      "membership_end_date": "2024-03-09",
+      "active": true,
+      "date_of_birth": "1995-11-25",
+      "gender": "Female",
+      "membership_type": "Gym"
+    },
+    "address": {
+      "street_line_1": "Plot No. 7, IT Corridor",
+      "street_line_2": "OMR Road",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "pin_code": "600002",
+      "country": "India"
+    }
+  },
+  {
+    "member": {
+      "first_name": "Rohan",
+      "last_name": "Yadav",
+      "email": "rohan.yadav@example.com",
+      "phone_number": "+91-9876543214",
+      "membership_start_date": "2023-04-05",
+      "membership_end_date": "2024-04-04",
+      "active": true,
+      "date_of_birth": "1991-07-01",
+      "gender": "Male",
+      "membership_type": "Gym"
+    },
+    "address": {
+      "street_line_1": "24B, Park Street",
+      "street_line_2": "Near Victoria Memorial",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "pin_code": "700016",
+      "country": "India"
+    }
+  },
+  {
+    "member": {
+      "first_name": "Pooja",
+      "last_name": "Gupta",
+      "email": "pooja.gupta@example.com",
+      "phone_number": "+91-9876543215",
+      "membership_start_date": "2022-12-20",
+      "membership_end_date": "2023-12-19",
+      "active": false,
+      "date_of_birth": "1993-02-14",
+      "gender": "Female",
+      "membership_type": "Gym"
+    },
+    "address": {
+      "street_line_1": "H.No 3-2-123, Banjara Hills",
+      "street_line_2": "Road No. 1",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "pin_code": "500034",
+      "country": "India"
+    }
+  },
+  {
+    "member": {
+      "first_name": "Deepak",
+      "last_name": "Mehta",
+      "email": "deepak.mehta@example.com",
+      "phone_number": "+91-9876543216",
+      "membership_start_date": "2023-05-12",
+      "membership_end_date": "2024-05-11",
+      "active": true,
+      "date_of_birth": "1987-09-03",
+      "gender": "Male",
+      "membership_type": "Gym"
+    },
+    "address": {
+      "street_line_1": "F-10, A Wing, Cyber City",
+      "street_line_2": "Phase 3",
+      "city": "Gurugram",
+      "state": "Haryana",
+      "pin_code": "122002",
+      "country": "India"
+    }
+  },
+  {
+    "member": {
+      "first_name": "Anjali",
+      "last_name": "Reddy",
+      "email": "anjali.reddy@example.com",
+      "phone_number": "+91-9876543217",
+      "membership_start_date": "2023-06-01",
+      "membership_end_date": "2024-05-31",
+      "active": true,
+      "date_of_birth": "1994-04-05",
+      "gender": "Female",
+      "membership_type": "Gym"
+    },
+    "address": {
+      "street_line_1": "Plot 54, Defence Colony",
+      "street_line_2": "Near Metro Station",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pin_code": "110024",
+      "country": "India"
+    }
+  },
+  {
+    "member": {
+      "first_name": "Sanjay",
+      "last_name": "Jain",
+      "email": "sanjay.jain@example.com",
+      "phone_number": "+91-9876543218",
+      "membership_start_date": "2022-10-10",
+      "membership_end_date": "2023-10-09",
+      "active": false,
+      "date_of_birth": "1985-12-30",
+      "gender": "Male",
+      "membership_type": "Gym"
+    },
+    "address": {
+      "street_line_1": "3rd Floor, Commercial Complex",
+      "street_line_2": "Main Bazaar Road",
+      "city": "Jaipur",
+      "state": "Rajasthan",
+      "pin_code": "302001",
+      "country": "India"
+    }
+  },
+  {
+    "member": {
+      "first_name": "Meera",
+      "last_name": "Shah",
+      "email": "meera.shah@example.com",
+      "phone_number": "+91-9876543219",
+      "membership_start_date": "2023-07-18",
+      "membership_end_date": "2024-07-17",
+      "active": true,
+      "date_of_birth": "1996-06-08",
+      "gender": "Female",
+      "membership_type": "Gym"
+    },
+    "address": {
+      "street_line_1": "Block C, Hiranandani Estate",
+      "street_line_2": "Thane West",
+      "city": "Thane",
+      "state": "Maharashtra",
+      "pin_code": "400607",
+      "country": "India"
+    }
+  }
+]

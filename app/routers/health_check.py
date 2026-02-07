@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends
 from app.dependencies import oauth2_scheme
+import sqlmodel
 
 router = APIRouter(tags=["Health check"])
 

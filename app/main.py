@@ -4,20 +4,19 @@ from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routers import health_check, auth, member
-from app.database import lifespan
 from app.dependencies import oauth2_scheme
 
 load_dotenv()
 
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["https://gym-manager-chirawa-dev.vercel.app",
                    "http://localhost:3000"],
     allow_credentials=True,
-    allow_methods=["GET", "OPTIONS"],
+    allow_methods=["GET", "OPTIONS", "POST"],
     allow_headers=["*"],
 )
 
